@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup as bs
 from ubb import Ubot, DUMP_ID
 
 
-@Ubot.on(events.NewMessage())  # pylint:disable=E0602
+@Ubot.on(events.NewMessage(pattern=r'\.scrape))  # pylint:disable=E0602
 async def check_incoming_messages(event):
     me = await Ubot.get_me()
     if event.sender_id == me.id:

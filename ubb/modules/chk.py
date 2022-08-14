@@ -64,9 +64,6 @@ async def st_charge(event):
 
         resq = await client.post('https://api.stripe.com/v1/tokens',
                                data=payload, headers=head)
-        Id = resq.json()['id']
-        Country = resq.json()['card']['country']
-        Brand = resq.json()['card']['brand']
 
         load = {
           "action": "wp_full_stripe_payment_charge",
